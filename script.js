@@ -63,40 +63,30 @@ const mealTypes = [
   "drink",
 ];
 
-// Cuisine
 const cuisineDropdownEl = document.getElementById("cuisine");
-cuisines.forEach((cuisine) => {
-  const cuisineDropdownOption = document.createElement("option");
-  cuisineDropdownOption.value = cuisine;
-  cuisineDropdownOption.textContent = cuisine;
-  cuisineDropdownEl.appendChild(cuisineDropdownOption);
-});
-
-// Diet
 const dietDropdownEl = document.getElementById("diet");
-diets.forEach((diet) => {
-  const dietDropdownOption = document.createElement("option");
-  dietDropdownOption.value = diet;
-  dietDropdownOption.textContent = diet;
-  dietDropdownEl.appendChild(dietDropdownOption);
-});
-
-// Meal Types
 const mealTypeDropdownEl = document.getElementById("meal-type");
-mealTypes.forEach((mealType) => {
-  const mealTypeDropdownOption = document.createElement("option");
-  mealTypeDropdownOption.value = mealType;
-  mealTypeDropdownOption.textContent = mealType;
-  mealTypeDropdownEl.appendChild(mealTypeDropdownOption);
-});
+const recipeCardEl = document.getElementById("recipe-card-el");
+const filterBtn = document.querySelector(".btn");
+const resetBtn = document.querySelector(".reset-btn");
+
+function populateDropdownOption(dropdownElement, options) {
+  options.forEach((option) => {
+    const optionEl = document.createElement("option");
+    optionEl.value = option;
+    optionEl.textContent = option;
+    dropdownElement.appendChild(optionEl);
+  });
+}
+
+populateDropdownOption(cuisineDropdownEl, cuisines);
+populateDropdownOption(dietDropdownEl, diets);
+populateDropdownOption(mealTypeDropdownEl, mealTypes);
 
 function clearRecipes() {
   recipeCardEl.innerHTML = "";
 }
 
-const recipeCardEl = document.getElementById("recipe-card-el");
-const filterBtn = document.querySelector(".btn");
-const resetBtn = document.querySelector(".reset-btn");
 function displayRecipes(recipes) {
   clearRecipes();
   if (!recipes.length) {
