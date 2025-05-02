@@ -152,10 +152,13 @@ filterBtn.addEventListener("click", async function () {
   const recipes = await getRecipes(cuisineValue, dietValue, mealTypeValue); // Fetch filtered recipes
   displayRecipes(recipes);
 });
-resetBtn.addEventListener("click", function () {
+resetBtn.addEventListener("click", async function () {
   cuisineDropdownEl.value = "All";
   dietDropdownEl.value = "All";
   mealTypeDropdownEl.value = "All";
+  clearRecipes();
+  const recipes = await getRecipes();
+  displayRecipes(recipes);
 });
 
 init();
