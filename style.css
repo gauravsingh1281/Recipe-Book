@@ -81,6 +81,71 @@ nav h1 {
     background-color: #1e3799;
 }
 
+#filter-option {
+    width: 100%;
+    padding: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+.filter-method {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 25px;
+}
+
+.filter-method h2 {
+    font-size: 25px;
+}
+
+.filter-method label {
+    font-size: 23px;
+}
+
+.filter-method select {
+    padding: 7px 18px;
+    font-size: 16px;
+    border-radius: 4px;
+}
+
+.action-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 30px;
+}
+
+.btn,
+.reset-btn {
+    padding: 8px 19px;
+    color: #ffff;
+    font-size: 17px;
+    border: 2px solid transparent;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all ease 0.8s;
+    margin: 27px 0;
+}
+
+.btn {
+    background-color: #ff7b33;
+}
+
+.reset-btn {
+    background-color: black;
+}
+
+.btn:active,
+.reset-btn:active {
+    scale: 0.9;
+}
+
 @media(max-width:768px) {
     .recipe-card-container {
         max-width: 90%;
@@ -110,5 +175,18 @@ nav h1 {
         width: 100%;
         text-align: center;
 
+    }
+
+    .filter-method {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 100%;
+        gap: 25px;
+    }
+
+    .filter-method select {
+        width: 80%;
     }
 }
