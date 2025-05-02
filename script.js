@@ -100,7 +100,7 @@ const resetBtn = document.querySelector(".reset-btn");
 function displayRecipes(recipes) {
   clearRecipes();
   if (!recipes.length) {
-    recipeCardEl.innerHTML = "<p>No recipes found for selected filters.</p>";
+    recipeCardEl.innerHTML = `<p class="error-msg">No recipes found for selected filters.</p>`;
     return;
   }
   recipes.forEach((recipe) => {
@@ -135,7 +135,7 @@ async function getRecipes(cuisine = "", diet = "", mealType = "") {
     return data.recipes;
   } catch (error) {
     console.error(error);
-    recipeCardEl.innerHTML = `<p>Error loading recipes. Try again later.</p>`;
+    recipeCardEl.innerHTML = `<p class="error-msg">Error loading recipes. Try again later.</p>`;
     return [];
   }
 }
